@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-IMAGE_NAME=registry.example.com/yourorg/yourserver
+IMAGE_NAME=davidcasciotti/partial:v1
 GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 GIT_COMMIT=$(git rev-parse --short HEAD)
 # Pull previous version, and use with --cache-now
