@@ -8,3 +8,4 @@ RUN pip install -r requirements.txt
 RUN useradd --create-home appuser
 USER appuser
 ENTRYPOINT ["python", "server.py"]
+ENV PYTHONFAULTHANDLER=1
