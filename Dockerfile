@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM docker.pkg.github.com/dcasciotti/partial/partial:latest
 # Install security updates:
 RUN apt-get update && apt-get -y upgrade
 WORKDIR /app
