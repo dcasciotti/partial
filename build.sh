@@ -9,7 +9,10 @@ docker pull $IMAGE_NAME:$GIT_BRANCH || true
 # Use branch+commit for tagging:
 docker build -t "$IMAGE_NAME:$GIT_BRANCH" \
 -t "$IMAGE_NAME:$GIT_COMMIT" \
+--label git-commit=$GIT_COMMIT \
+--label git-branch=$GIT_BRANCH \
 --cache-from=$IMAGE_NAME:$GIT_BRANCH .
+python smoketest.py $IMAGE_NAME:$GIT_BRANCH
 # Security scanners:
 docker run --entrypoint=bash $IMAGE_NAME:$GIT_BRANCH \
 -c "pip install --user safety && ~/.local/bin/safety check"
